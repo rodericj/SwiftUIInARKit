@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "IMG_2582.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "unit" : "inches",
+    "width" : 10
+  }
+}
