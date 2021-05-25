@@ -6,53 +6,6 @@
 //
 
 import SwiftUI
-
-struct AvatarImage1: View {
-    let name: String
-    var body: some View {
-        HStack(alignment: .center, spacing: 10, content: {
-            Spacer()
-            HStack {
-                Text(name)
-                Image(name)
-                    .resizable()
-                    .frame(
-                        width: 100,
-                        height: 100,
-                        alignment: .center
-                    )
-                    .clipShape(Circle())
-                    .shadow(radius: 10)
-            }
-            
-        })
-    }
-}
-
-struct AvatarImage: View {
-    let name: String
-    var body: some View {
-        HStack(alignment: .center, spacing: 10, content: {
-            Spacer()
-            ZStack(alignment: .bottom, content: {
-                Image(name)
-                    .resizable()
-                    .frame(
-                        width: 100,
-                        height: 100,
-                        alignment: .center
-                    )
-                    .clipShape(Circle())
-                    .shadow(radius: 10)
-                Text(name)
-                    .font(.callout)
-                    .foregroundColor(.black)
-                    .background(Color.white)
-            })
-        })
-    }
-}
-
 struct BlurView: UIViewRepresentable {
 
     let style: UIBlurEffect.Style
@@ -80,9 +33,9 @@ struct BlurView: UIViewRepresentable {
 struct ARCardView: View {
     var body: some View {
         VStack {
-            AvatarImage(name: "Anna")
-            AvatarImage(name: "Ada")
-            AvatarImage(name: "Jackson")
+            AvatarImage(name: Avatars.anna.rawValue.capitalized)
+            AvatarImage(name: Avatars.ada.rawValue.capitalized)
+            AvatarImage(name: Avatars.jackson.rawValue.capitalized)
         }
     }
 }

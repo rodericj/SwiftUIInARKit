@@ -18,7 +18,7 @@ extension ViewController {
             // so we have to rotate it on X-axis by -90 degrees to
             // make it flat to the image detected
             planeNode.eulerAngles.x = -.pi / 2
-            
+            planeNode.position = SCNVector3(0.1, 0.1, 0)
             createHostingController(for: planeNode)
             
             node.addChildNode(planeNode)
@@ -39,9 +39,10 @@ extension ViewController {
             
             // set the pixel size of the Card View
             arVC.view.frame = CGRect(x: 0, y: 0, width: 500, height: 500)
-            
+            arVC.view.clipsToBounds = false
             // add the ar card view as a subview to the main view
             self.view.addSubview(arVC.view)
+            self.view.clipsToBounds = false
             
             // render the view on the plane geometry as a material
             self.show(hostingVC: arVC, on: node)
